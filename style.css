@@ -1,0 +1,126 @@
+            body{
+            	font-family:Arial;
+            }
+        	.main {
+                margin:20px auto;
+                display:flex;
+                justify-content:start;
+                align-items:center;
+                flex-direction:column;
+                position:relative;
+                width:470px;
+                height:570px;
+                padding:10px;
+                border:3px dashed darkgreen;
+                background: #F6FBF3;
+                border-radius:20px;
+                text-align:center;
+            }
+            .main .section1 {
+            	position:relative;
+                width:100%;
+                height:450px;
+                border-radius:15px;
+                display:flex;
+                justify-content:start;
+                align-items:center;
+                flex-direction:column;
+                background: #228B22;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .section1:hover {
+            	transform: scale(1.005);
+                box-shadow: 0 0 3px black;
+            }
+            .main #title {
+            	margin-top:40px;
+                font-size:40px;
+                color: goldenrod;
+                text-shadow:0 0 10px darkgreen;
+                filter:brightness(1.10);
+            }
+            .main .text {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:column;
+            	font-size:15px;
+            	width:100%;
+                height:200px;
+                padding:10px;
+                color:white;
+            }
+            .text #cards-el, #sum-el {
+            	font-size: 28px;
+            }
+            .main .btnz {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:row;
+                gap:35px;
+                position:relative;
+                width:100%;
+                height:80px;
+                margin-top:10px;
+                color:white;
+            }
+            .btnz button {
+            	font-size:20px;
+                color: darkgreen;
+                font-weight:bold;
+                padding:15px 25px;
+                background: goldenrod;
+                border: none;
+                border-radius:10px;
+             }
+             #start-btn, #newCard-btn {
+                transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            }
+            #start-btn:hover, #newCard-btn:hover {
+            	transform: translateY(-3px);
+                box-shadow: 0 2px 4px darkgreen;
+                background: #FDBE02;
+            }
+            #start-btn:active, #newCard-btn:active {
+            	transform: translateY(3px);
+                box-shadow: 0 0 10px darkgreen;
+                background: goldenrod;
+            }
+            .name-cash {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+            	position:relative;
+                width:100%;
+                height:60px;
+                font-size:20px;
+                font-weight:bold;
+                margin-top:7px;
+                border-radius:15px;
+                background: #228B22;
+                color:white;
+            	transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .name-cash:hover {
+            	transform: scale(1.005);
+                box-shadow: 0 0 3px black;
+            }
+            .text-bottom {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+            	position:relative;
+                width:100%;
+                font-size:17px;
+                font-style:italic;
+                margin-top:7px;
+                border-radius:15px;
+                background: #228B22;
+                color:white;
+            	transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .text-bottom:hover {
+            	transform: scale(1.005);
+                box-shadow: 0 0 3px black;
+            }

@@ -1,0 +1,270 @@
+<html>
+	<head>
+    	<meta charset="UTF-8">
+    	<style>
+        	body{
+            	font-family:Arial;
+            }
+        	.main {
+                margin:20px auto;
+                display:flex;
+                justify-content:start;
+                align-items:center;
+                flex-direction:column;
+                position:relative;
+                width:470px;
+                height:570px;
+                padding:10px;
+                border:3px dashed darkgreen;
+                background: #F6FBF3;
+                border-radius:20px;
+                text-align:center;
+            }
+            .main .section1 {
+            	position:relative;
+                width:100%;
+                height:450px;
+                border-radius:15px;
+                display:flex;
+                justify-content:start;
+                align-items:center;
+                flex-direction:column;
+                background: #228B22;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .section1:hover {
+            	transform: scale(1.005);
+                box-shadow: 0 0 3px black;
+            }
+            .main #title {
+            	margin-top:40px;
+                font-size:40px;
+                color: goldenrod;
+                text-shadow:0 0 10px darkgreen;
+                filter:brightness(1.10);
+            }
+            .main .text {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:column;
+            	font-size:15px;
+            	width:100%;
+                height:200px;
+                padding:10px;
+                color:white;
+            }
+            .text #cards-el, #sum-el {
+            	font-size: 28px;
+            }
+            .main .btnz {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:row;
+                gap:35px;
+                position:relative;
+                width:100%;
+                height:80px;
+                margin-top:10px;
+                color:white;
+            }
+            .btnz button {
+            	font-size:20px;
+                color: darkgreen;
+                font-weight:bold;
+                padding:15px 25px;
+                background: goldenrod;
+                border: none;
+                border-radius:10px;
+             }
+             #start-btn, #newCard-btn {
+                transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            }
+            #start-btn:hover, #newCard-btn:hover {
+            	transform: translateY(-3px);
+                box-shadow: 0 2px 4px darkgreen;
+                background: #FDBE02;
+            }
+            #start-btn:active, #newCard-btn:active {
+            	transform: translateY(3px);
+                box-shadow: 0 0 10px darkgreen;
+                background: goldenrod;
+            }
+            .name-cash {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+            	position:relative;
+                width:100%;
+                height:60px;
+                font-size:20px;
+                font-weight:bold;
+                margin-top:7px;
+                border-radius:15px;
+                background: #228B22;
+                color:white;
+            	transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .name-cash:hover {
+            	transform: scale(1.005);
+                box-shadow: 0 0 3px black;
+            }
+            .text-bottom {
+            	display:flex;
+                justify-content:center;
+                align-items:center;
+            	position:relative;
+                width:100%;
+                font-size:17px;
+                font-style:italic;
+                margin-top:7px;
+                border-radius:15px;
+                background: #228B22;
+                color:white;
+            	transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .text-bottom:hover {
+            	transform: scale(1.005);
+                box-shadow: 0 0 3px black;
+            }
+        </style>
+    </head>
+    <body>
+    	<div class="main">
+        	<div class="section1">
+              <h1 id="title">BLACKJACK</h1>
+              <div class="text">
+                  <h2 id="message-el">Press START GAME to draw cards!</h2>
+                  <h2>Cards:<span id="cards-el"></span></h2>
+                  <h2>Sum:<span id="sum-el"></span></h2>
+              </div>
+              <div class="btnz">
+                  <button id="start-btn" onclick="start()">START GAME</button>
+                  <button id="newCard-btn" onclick="newCard()">NEW CARD</button>
+              </div>
+        	</div>
+            <div class="name-cash">
+            	<p><span id="name">Player name</span> : $ <span id="cash">Cash</span></p>
+        	</div>
+            <div class="text-bottom">
+            	<p>---  <span id="msg-bottom"></span>  ---</p>
+        	</div>
+        </div>
+        <script>
+        	
+            const messageEl = document.getElementById("message-el")
+            const cardsEl = document.getElementById("cards-el")
+            const sumEl = document.getElementById("sum-el")
+            
+            const startBtn = document.getElementById("start-btn")
+            const newCardBtn = document.getElementById("newCard-btn")
+            
+            const playerName = document.getElementById("name")
+            const cashEl = document.getElementById("cash")
+            const msgBottom = document.getElementById("msg-bottom")
+            
+            let index = 0
+            let cards = []
+            let sumNum = 0
+            let players = ["Marinda","John","Sarah","Andy","Michael"]
+            let cash = 0
+            startEnabled()
+            
+            function startEnabled() {
+            	startBtn.disabled = false
+            	newCardBtn.disabled = true
+            }
+            function startDisabled() {
+            	startBtn.disabled = true
+            	newCardBtn.disabled = false
+            }
+            
+            function randomPlayer() {
+            	playerName.textContent = players [Math.floor(Math.random()*players.length)]
+                cashEl.textContent = cash
+            }
+            
+            function getCard() {
+            	index = Math.floor(Math.random()*13) + 1
+                if (index === 1) {
+                    return index = 11
+                } else if (10 <= index) {
+                    return index = 10
+                } else {
+                	return index
+                }
+            }
+            
+            function sumCards() {
+            	for (let i=0 ; i<cards.length ; i++) {
+                	sumNum += cards[i]}
+                sumEl.textContent += sumNum
+            }
+            
+            function emptyBoard() {
+            	cash = 200
+            	sumNum = 0
+                cards = []
+                index = 0
+                cardsEl.textContent = ""
+                sumEl.textContent = ""
+                playerName.textContent = ""
+                cashEl.textContent = ""
+                msgBottom.textContent = ""
+            }
+            
+            function calculate() {
+            	if (sumNum === 21) {
+                      startEnabled()
+                      messageEl.textContent = "👑 Wohoo! You have got a Blackjack! 👑"
+                      cash = 400
+                      cashEl.textContent = cash
+                      msgBottom.textContent = "Congrats. Press START GAME to be lucky again!"
+             	 } else if (sumNum < 21) {
+                      startDisabled()
+                      messageEl.textContent = "Do you want to draw a new card?"
+                      msgBottom.textContent = "You still have a chance to win the prize"
+             	 } else {
+                      startEnabled()
+                      messageEl.textContent = "💩 You are out of the game! 💩"
+                      cash = 0
+                      cashEl.textContent = cash
+                      msgBottom.textContent = "Want to play again? Press START GAME!"
+              	 }
+            }
+            
+            function start() {
+            		emptyBoard()
+                
+                let card1 = getCard()
+            	let card2 = getCard()
+            		cards.push(card1)
+            		cards.push(card2)
+           		for (let i=0 ; i < cards.length ; i++) {
+            		cardsEl.textContent += "| " + cards[i] + " |"
+            		}
+                    
+                    sumCards()
+                	randomPlayer()
+            		startDisabled()
+            		calculate()
+            } 
+            
+            function newCard() {
+            		cardsEl.textContent = ""
+                	sumEl.textContent = ""
+                    
+            	let card3 = getCard()
+            		cards.push(card3)
+                for (let i=0 ; i < cards.length ; i++) {
+            		cardsEl.textContent += "| " + cards[i] + " |"
+            	}	
+                	sumNum = 0
+                	sumCards()
+                    calculate()
+            }
+            	
+        </script>
+    </body>
+</html>
