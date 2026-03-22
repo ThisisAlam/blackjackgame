@@ -93,7 +93,7 @@ This project simulates a basic casino-style Blackjack experience with dynamic ca
 
 This project was built as part of my learning journey on **Scrimba**:
 
-👉 [https://scrimba.com/](https://scrimba.com/)
+👉 [https://scrimba.com/](https://scrimba.com/?via=u43a7734)
 
 *(Practicing real-world JavaScript projects and improving problem-solving skills.)*
 
@@ -106,7 +106,7 @@ This project was built as part of my learning journey on **Scrimba**:
 
 * 🔗 LinkedIn: [https://www.linkedin.com/in/fakhar-e-alam-a046133b4/](https://www.linkedin.com/in/fakhar-e-alam-a046133b4/)
 * 💻 GitHub: [https://github.com/ThisisAlam](https://github.com/ThisisAlam)
-* 🎓 Scrimba: [https://scrimba.com/](https://scrimba.com/)
+* 🎓 Scrimba: [https://scrimba.com/](https://scrimba.com/?via=u43a7734)
 
 ---
 
