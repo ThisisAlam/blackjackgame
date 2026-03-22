@@ -13,9 +13,7 @@ This project simulates a basic casino-style Blackjack experience with dynamic ca
 
 ## 📸 Preview
 
-```
-![Blackjack Game Screenshot](Screenshot/blackjack_game.png)
-```
+![Blackjack Game Screenshot](blackjack_game.png)
 
 ---
 
